@@ -1,4 +1,4 @@
-import ModalFull from "@/app/shared/components/modal/modalFull";
+import ModalWrap from "@/app/shared/components/modal/modalWrap";
 
 interface UseModalProps {
   open: boolean;
@@ -7,7 +7,7 @@ interface UseModalProps {
 
 const UseModal = ({ open, onClose }: UseModalProps) => {
   return (
-    <ModalFull title="개인정보 수집 및 이용동의" open={open} onClose={onClose}>
+    <ModalWrap type="full" title="개인정보 수집 및 이용동의" open={open} onClose={onClose}>
       <div className="md_agree_area">
         <div className="inner">
           <p><b>제1장 총칙</b></p>
@@ -37,7 +37,7 @@ const UseModal = ({ open, onClose }: UseModalProps) => {
           </div>
         </div>
       </div>
-    </ModalFull>
+    </ModalWrap>
   );
 };
 

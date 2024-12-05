@@ -21,7 +21,7 @@ const FindPwEmailPage = () => {
   }
 
   // verify form submit
-  const onFindPwSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onVerifySubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   }
 
@@ -57,7 +57,7 @@ const FindPwEmailPage = () => {
           <div className="pb_80">
             <EmailForm onSubmit={onEmailSubmit} />
             {verifyFormShow && (
-              <VerifyForm onSubmit={onFindPwSubmit} inputRef={verifyInputRef} />
+              <VerifyForm onSubmit={onVerifySubmit} inputRef={verifyInputRef} />
             )}
           </div>
         </div>

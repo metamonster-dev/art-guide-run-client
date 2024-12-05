@@ -1,4 +1,4 @@
-import ModalFull from "@/app/shared/components/modal/modalFull";
+import ModalWrap from "@/app/shared/components/modal/modalWrap";
 
 interface TermsModalProps {
   open: boolean;
@@ -7,7 +7,7 @@ interface TermsModalProps {
 
 const TermsModal = ({ open, onClose }: TermsModalProps) => {
   return (
-    <ModalFull title="이용약관" open={open} onClose={onClose}>
+    <ModalWrap type="full" title="이용약관" open={open} onClose={onClose}>
       <div className="md_agree_area">
         <div className="inner">
           <p><b>제1장 총칙</b></p>
@@ -33,7 +33,7 @@ const TermsModal = ({ open, onClose }: TermsModalProps) => {
           </div>
         </div>
       </div>
-    </ModalFull>
+    </ModalWrap>
   );
 };
 

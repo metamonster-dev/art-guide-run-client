@@ -1,15 +1,16 @@
 import Modal from "@/app/shared/components/modal/modal";
 
-interface ModalFullProps {
+interface ModalWrapProps {
+  type: "full" | "bottom";
   title: string;
   children: React.ReactNode;
   open: boolean;
   onClose: () => void;
 }
 
-const ModalFull = ({ title, children, open, onClose }: ModalFullProps) => {
+const ModalWrap = ({ type, title, children, open, onClose }: ModalWrapProps) => {
   return (
-    <Modal type="full" open={open}>
+    <Modal type={type ?? "full"} open={open}>
       <div className="md_tit">
         <p>{title}</p>
         <button
@@ -27,4 +28,4 @@ const ModalFull = ({ title, children, open, onClose }: ModalFullProps) => {
   );
 };
 
-export default ModalFull;
+export default ModalWrap;

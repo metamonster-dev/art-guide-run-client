@@ -1,4 +1,4 @@
-import ModalFull from "@/app/shared/components/modal/modalFull";
+import ModalWrap from "@/app/shared/components/modal/modalWrap";
 
 interface MarketingModalProps {
   open: boolean;
@@ -7,7 +7,7 @@ interface MarketingModalProps {
 
 const MarketingModal = ({ open, onClose }: MarketingModalProps) => {
   return (
-    <ModalFull title="선택정보 수집 및 마케팅 수신 동의" open={open} onClose={onClose}>
+    <ModalWrap type="full" title="선택정보 수집 및 마케팅 수신 동의" open={open} onClose={onClose}>
       <div className="md_agree_area">
         <div className="inner">
           <div>
@@ -28,7 +28,7 @@ const MarketingModal = ({ open, onClose }: MarketingModalProps) => {
           </div>
         </div>
       </div>
-    </ModalFull>
+    </ModalWrap>
   );
 };
 

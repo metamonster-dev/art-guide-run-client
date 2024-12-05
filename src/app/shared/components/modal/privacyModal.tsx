@@ -1,4 +1,4 @@
-import ModalFull from "@/app/shared/components/modal/modalFull";
+import ModalWrap from "@/app/shared/components/modal/modalWrap";
 
 interface PrivacyModalProps {
   open: boolean;
@@ -7,7 +7,7 @@ interface PrivacyModalProps {
 
 const PrivacyModal = ({ open, onClose }: PrivacyModalProps) => {
   return (
-    <ModalFull title="개인정보 처리방침" open={open} onClose={onClose}>
+    <ModalWrap type="full" title="개인정보 처리방침" open={open} onClose={onClose}>
       <div className="md_agree_area">
         <div className="inner">
           <p>
@@ -33,7 +33,7 @@ const PrivacyModal = ({ open, onClose }: PrivacyModalProps) => {
           </div>
         </div>
       </div>
-    </ModalFull>
+    </ModalWrap>
   );
 };
 
