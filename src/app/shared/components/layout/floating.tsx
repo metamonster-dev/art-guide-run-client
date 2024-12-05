@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CustomStyle } from "@/app/shared/types/style.type";
 import $ from "jquery";
 
 interface FloatingProps {
   bottom?: number;
-}
-interface CustomStyle extends CSSStyleDeclaration {
-  zoom?: string | number;
 }
 
 const Floating = ({ bottom }: FloatingProps) => {

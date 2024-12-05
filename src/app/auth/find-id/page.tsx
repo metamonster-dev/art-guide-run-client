@@ -9,7 +9,7 @@ const FindIdPage = () => {
         <Header title="이메일 아이디 찾기" isBack />
       </div>
       
-      <div id="contents">
+      <div id="contents" tabIndex={-1}>
         <Floating />
         
         <div className="inner">

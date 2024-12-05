@@ -37,7 +37,7 @@ const FindPwEmailPage = () => {
         <Header title="비밀번호 찾기" isBack />
       </div>
       
-      <div id="contents">
+      <div id="contents" tabIndex={-1}>
         <Floating />
 
         <div className="inner">

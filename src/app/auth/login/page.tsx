@@ -21,7 +21,7 @@ const FindIdPage = () => {
         <Header title="로그인" isBack />
       </div>
       
-      <div id="contents">
+      <div id="contents" tabIndex={-1}>
         <Floating />
 
         <div className="pt_32 pb_80">
