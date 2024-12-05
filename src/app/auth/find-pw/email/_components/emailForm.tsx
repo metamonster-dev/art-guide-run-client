@@ -1,10 +1,10 @@
 interface FindPwEmailFormProps {
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  onFormSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const FindPwEmailForm = ({ onSubmit }: FindPwEmailFormProps) => {
+const FindPwEmailForm = ({ onFormSubmit }: FindPwEmailFormProps) => {
   return (
-    <form id="sendEmailForm" onSubmit={onSubmit}>
+    <form id="sendEmailForm" onSubmit={onFormSubmit}>
       <div className="input_list_area gap_24">
         <div className="label_input_area">
           <label htmlFor="email" className="label">이메일 정보</label>

@@ -55,9 +55,9 @@ const FindPwEmailPage = () => {
             </p>
           </div>
           <div className="pb_80">
-            <EmailForm onSubmit={onEmailSubmit} />
+            <EmailForm onFormSubmit={onEmailSubmit} />
             {verifyFormShow && (
-              <VerifyForm onSubmit={onVerifySubmit} inputRef={verifyInputRef} />
+              <VerifyForm onFormSubmit={onVerifySubmit} inputRef={verifyInputRef} />
             )}
           </div>
         </div>

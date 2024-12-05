@@ -1,11 +1,11 @@
 interface FindPwVerifyFormProps {
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  onFormSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   inputRef: React.RefObject<HTMLInputElement>;
 }
 
-const FindPwVerifyForm = ({ onSubmit, inputRef }: FindPwVerifyFormProps) => {
+const FindPwVerifyForm = ({ onFormSubmit, inputRef }: FindPwVerifyFormProps) => {
   return (
-    <form id="verifyForm" onSubmit={onSubmit}>
+    <form id="verifyForm" onSubmit={onFormSubmit}>
       <div className="input_list_area gap_24 pt_40">
         <div className="label_input_area">
           <label htmlFor="verify_num" className="label">인증번호 입력</label>

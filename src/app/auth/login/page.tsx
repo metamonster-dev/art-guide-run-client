@@ -10,7 +10,7 @@ import IsJoinModal from "@/app/auth/_components/isJoinModal";
 const FindIdPage = () => {
   const [isJoinOpen, setIsJoinOpen] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsJoinOpen(true);
   };
@@ -26,7 +26,7 @@ const FindIdPage = () => {
 
         <div className="pt_32 pb_80">
           <div className="inner">
-            <form id="loginForm" onSubmit={onSubmit}>
+            <form id="loginForm" onSubmit={onFormSubmit}>
               <div className="input_list_area gap_24">
                 <div className="label_input_area">
                   <label htmlFor="email" className="label">이메일 아이디</label>
