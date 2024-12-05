@@ -1,0 +1,327 @@
+@import "../common/_variables";
+@import "../common/_mixins";
+
+/*======================================*/
+/*--------- NOTYF TOAST CUSTOM ---------*/
+/*======================================*/
+.notyf {
+  padding: 40px 16px;
+  .notyf__toast {
+    width: 100%;
+    max-width: calc($width_container - 32px);
+    padding: 0 16px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  .notyf__toast--lower {
+    margin-top: 8px;
+  }
+  .notyf__wrapper {
+    padding: 15px 24px 16px 0;
+  }
+  .notyf__dismiss {
+    top: calc(50% - 16px);
+    right: 8px;
+    width: 32px;
+    height: 32px;
+  }
+  .notyf__dismiss-btn {
+    background: none;
+    opacity: 1;
+  }
+  .notyf__ripple {
+    width: 600px;
+    height: 600px;
+  }
+  .notyf__icon {
+    width: 24px;
+    margin: -2px 8px -1px 0;
+  }
+  .notyf__message {
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+/*======================================*/
+/*------------ MODAL STYLES ------------*/
+/*======================================*/
+.modal_wrap {
+  position: fixed;
+  // display: none;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  .modal_area {
+    background-color: $color_white;
+    .x_btn {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url("/images/shared/icon_close.svg") no-repeat center /
+        contain;
+      span {
+        @include hiddenText;
+      }
+    }
+  }
+  // &.active {
+  //   display: flex;
+  // }
+  &.full {
+    align-items: center;
+    justify-content: center;
+    z-index: $z_modal_full;
+    .modal_area {
+      width: 100%;
+      max-width: $width_container;
+      height: 100%;
+      .md_tit {
+        @include flexLayout(center, space-between, 8px);
+        height: $height_header;
+        padding: 0 16px;
+        border-bottom: 1px solid $color_gray_e;
+        p {
+          @include fontStyle(1.8rem, $color_gray_1d, 700);
+        }
+      }
+      .md_cont {
+        height: calc(100% - $height_header);
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+  &.bottom {
+    align-items: flex-end;
+    justify-content: center;
+    z-index: $z_modal;
+    .modal_area {
+      position: relative;
+      bottom: -50%;
+      width: 100%;
+      max-width: $width_container;
+      padding: 24px 16px 40px;
+      border-radius: 8px 8px 0 0;
+      animation: modalUp 0.5s ease-in-out 0s forwards;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: calc(50% - 28px);
+        display: block;
+        width: 56px;
+        height: 4px;
+        border-radius: 50px;
+        background-color: $color_gray_ef;
+      }
+      .md_tit {
+        position: relative;
+        padding: 7px 0;
+        text-align: center;
+        p {
+          @include fontStyle(1.8rem, $color_gray_1d, 700);
+        }
+        .x_btn {
+          position: absolute;
+          top: calc(50% - 12px);
+          right: 0;
+        }
+      }
+    }
+  }
+  &.middle {
+    align-items: center;
+    justify-content: center;
+    z-index: $z_modal;
+    .modal_area {
+      width: calc(100% - 32px);
+      max-width: 328px;
+      text-align: center;
+      border-radius: 4px;
+    }
+  }
+  &.msg {
+    align-items: center;
+    justify-content: center;
+    z-index: $z_modal;
+    .modal_area {
+      width: calc(100% - 32px);
+      max-width: 328px;
+      padding: 24px;
+      border-radius: 8px;
+      text-align: center;
+      p {
+        @include fontStyle(1.8rem, $color_gray_1d, 700);
+        margin-bottom: 16px;
+      }
+      span {
+        @include fontStyle(1.6rem, $color_gray_5, 500);
+        display: block;
+      }
+      .btn_area {
+        @include flexLayout(center, center, 8px);
+        margin-top: 24px;
+        .btn {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+// 팝업
+.md_popup_area {
+  a {
+    display: block;
+  }
+  .img_area {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    overflow: hidden;
+  }
+  .btn_area {
+    @include flexLayout(center, space-between, 8px);
+    padding: 16px;
+    button {
+      @include fontStyle(1.6rem, $color_key_01, 700);
+    }
+  }
+}
+
+// 약관 동의
+.md_agree_area {
+  @include fontStyle(1.6rem, $color_gray_5, 500);
+  padding: 32px 0;
+  .inner {
+    @include flexLayout(flex-start, center, 24px, nowrap, column);
+    & > div {
+      @include flexLayout(flex-start, center, 16px, nowrap, column);
+    }
+  }
+  b {
+    color: $color_gray_1d;
+    font-weight: 700;
+  }
+}
+
+// 가입 내역 안내
+.md_is_member_area {
+  padding: 16px 0 0;
+  text-align: center;
+  p {
+    @include fontStyle(1.6rem, $color_gray_5, 500);
+  }
+  .sns_info {
+    @include flexLayout(center, center, 8px);
+    height: 62px;
+    margin-top: 24px;
+    padding: 0 16px;
+    border-radius: 4px;
+    background-color: $color_gray_f8;
+    img {
+      width: 20px;
+    }
+    span {
+      @include fontStyle(1.6rem, $color_gray_5, 500);
+      display: block;
+      word-break: break-all;
+    }
+  }
+  button {
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+// 상품 공유
+.md_share_area {
+  @include flexLayout(center, center, 24px);
+  padding-top: 16px;
+
+  button {
+    text-align: center;
+    span {
+      @include fontStyle(1.4rem, $color_gray_5, 500);
+      display: block;
+      margin-top: 8px;
+    }
+  }
+}
+
+// 상품 문의하기
+.md_consult_area {
+  .item_area {
+    padding: 32px 16px 24px;
+    border-bottom: 8px solid $color_gray_f8;
+  }
+}
+
+// 공모사업
+.md_offering_area {
+  margin-top: 16px;
+  padding: 24px 16px;
+  border-radius: 4px;
+  background-color: $color_gray_f8;
+
+  dl {
+    @include flexLayout(stretch, center, 16px 0, wrap);
+    dt {
+      @include fontStyle(1.6rem, $color_gray_71, 500);
+      width: 80px;
+      padding-right: 8px;
+    }
+    dd {
+      @include fontStyle(1.6rem, $color_gray_1d, 500);
+      width: calc(100% - 80px);
+    }
+  }
+}
+
+// 취소신청
+.md_cancel_area {
+  padding-top: 16px;
+  text-align: center;
+  p {
+    @include fontStyle(1.6rem, $color_gray_5, 500);
+  }
+  .text_area {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: $color_gray_f8;
+    span {
+      @include fontStyle(1.6rem, $color_gray_5, 500);
+      display: block;
+    }
+  }
+}
+
+// 후기 작성/수정
+.md_review_area {
+  .order_item_wrap {
+    border-top: 0;
+    border-bottom: 8px solid $color_gray_f8;
+  }
+}
+
+// 관심사 선택
+.md_interest_tit_area {
+  padding: 32px 0;
+  background-color: $color_gray_f8;
+  text-align: center;
+  p {
+    @include fontStyle(2.2rem, $color_gray_1d, 700);
+  }
+  span {
+    @include fontStyle(1.6rem, $color_gray_5, 500);
+    display: block;
+    margin-top: 12px;
+  }
+}

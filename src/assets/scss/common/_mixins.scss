@@ -1,0 +1,74 @@
+@import "../common/_variables";
+
+// 화면 X, 스크린리더 O
+@mixin hiddenText {
+  position: absolute;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+// 화면 X, 스크린리더 O (인풋 커스텀용)
+@mixin hiddenInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+// 화면 X, 스크린리더 X
+@mixin hiddenTextImportant {
+  display: none;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+@mixin initBackground {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin line1Text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin line2Text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 2.4rem;
+  max-height: 4.8rem;
+}
+
+@mixin flexLayout(
+  $align: stretch,
+  $justify: flex-start,
+  $gap: 0,
+  $wrap: nowrap,
+  $direction: row,
+  $flex: flex
+) {
+  display: $flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}
+@mixin fontStyle($size: 1.6rem, $color: $color_black, $weight: 500) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}

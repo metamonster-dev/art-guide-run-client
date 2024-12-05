@@ -1,0 +1,178 @@
+@import "../common/_variables";
+@import "../common/_mixins";
+
+/*======================================*/
+/*------------ LOGIN PAGES -------------*/
+/*======================================*/
+.login_btns_area {
+  @include flexLayout(center, center, 16px);
+  margin-top: 24px;
+  a {
+    @include fontStyle(1.4rem, $color_gray_71, 500);
+    position: relative;
+    display: block;
+  }
+  i {
+    display: block;
+    width: 1px;
+    height: 12px;
+    background-color: $color_gray_d8;
+  }
+}
+.login_sns_area {
+  margin-top: 40px;
+  .tit {
+    position: relative;
+    text-align: center;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $color_gray_e;
+    }
+    p {
+      @include fontStyle(1.4rem, $color_gray_1d, 500);
+      position: relative;
+      display: inline-block;
+      padding: 0 16px;
+      background-color: $color_white;
+    }
+  }
+  .btns {
+    @include flexLayout(center, center, 16px);
+    margin-top: 24px;
+    button img {
+      width: 48px;
+    }
+  }
+}
+
+/*======================================*/
+/*------------ JOIN PAGES --------------*/
+/*======================================*/
+.identity_btn {
+  @include flexLayout(center, flex-start, 12px);
+  width: 100%;
+  height: 88px;
+  padding: 0 32px 0 16px;
+  border-radius: 4px;
+  background: url("/images/icon_identity_arrow.svg") no-repeat right 16px
+    center / 16px;
+  text-align: left;
+
+  i {
+    @include initBackground;
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+    &.icon01 {
+      background-image: url("/images/icon_identity01.png");
+    }
+    &.icon02 {
+      background-image: url("/images/icon_identity02.png");
+    }
+    &.icon03 {
+      background-image: url("/images/icon_identity03.png");
+    }
+  }
+  &.type01 {
+    border: 1px solid $color_gray_8e;
+    background-color: $color_white;
+    span {
+      @include fontStyle(1.4rem, $color_gray_5, 500);
+      display: block;
+      flex: 1;
+      b {
+        @include fontStyle(1.6rem, $color_gray_1d, 700);
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
+  }
+  &.type02 {
+    border: 1px solid $color_key_05;
+    background-color: $color_key_03;
+    span {
+      @include fontStyle(1.6rem, $color_gray_1d, 700);
+    }
+  }
+}
+
+.join_tit_area {
+  padding: 32px 0;
+  background-color: $color_gray_f8;
+  text-align: center;
+  h2 {
+    @include fontStyle(2.2rem, $color_gray_1d, 700);
+  }
+  p {
+    @include fontStyle(1.6rem, $color_gray_5, 500);
+    margin-top: 12px;
+  }
+}
+
+.join_complete_area {
+  padding: 32px 0 80px;
+  text-align: center;
+  img {
+    margin: 0 auto;
+  }
+  h2 {
+    @include fontStyle(2.2rem, $color_gray_1d, 700);
+    margin-top: 16px;
+  }
+  p {
+    @include fontStyle(1.6rem, $color_gray_5, 500);
+    margin-top: 16px;
+  }
+  button {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+/*======================================*/
+/*------------ FIND PAGES --------------*/
+/*======================================*/
+.find_info_area {
+  padding: 32px 0 40px;
+  text-align: center;
+  img {
+    margin: 0 auto 16px;
+  }
+  p {
+    @include fontStyle(1.8rem, $color_gray_1d, 700);
+  }
+  .email_info {
+    @include flexLayout(center, center);
+    height: 80px;
+    margin-top: 24px;
+    padding: 0 16px;
+    border-radius: 4px;
+    background-color: $color_gray_f8;
+    span {
+      @include fontStyle(1.6rem, $color_gray_5, 500);
+      display: block;
+      word-break: break-all;
+    }
+  }
+}
+.timer_area {
+  @include flexLayout(center, space-between, 8px);
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 4px;
+  background-color: $color_key_03;
+  p {
+    @include fontStyle(1.4rem, $color_key_01, 700);
+  }
+  button {
+    @include fontStyle(1.4rem, $color_gray_71, 700);
+    text-decoration: underline;
+  }
+}
