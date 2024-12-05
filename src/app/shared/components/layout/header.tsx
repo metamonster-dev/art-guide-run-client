@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import $ from "jquery";
@@ -28,8 +28,58 @@ const Header = ({
   };
   const onMenuClose = () => {
     setMenuShow(false);
-    $("#contents a, #contents button, #contents input").eq(0).focus();
+    $("#header .menu_btn").focus();
   };
+
+  useEffect(() => {
+    // depth01 focus & click
+    $("#m_menu .gnb > ul > li > button").on("click focus", function () {
+      $(this).parent().addClass("active").siblings().removeClass("active");
+    });
+
+    // 메뉴 Tab 이동 제어
+    $("#contents a, #contents button, #contents input")
+      .eq(0)
+      .on("keydown", function (e) {
+        if (
+          $("#m_menu").css("display") === "block" &&
+          e.shiftKey &&
+          e.key === "Tab"
+        ) {
+          e.preventDefault();
+          $("#header .menu_btn").focus();
+        }
+      });
+    $("#header .menu_btn").on("keydown", function (e) {
+      if (!$("#m_menu").hasClass("show") && !e.shiftKey && e.key === "Tab") {
+        e.preventDefault();
+        if ($(".sticky_menu .tab_area").length > 0)
+          $(".sticky_menu .tab_area button, .sticky_menu .tab_area a")
+            .first()
+            .focus();
+        else $("#contents a, #contents button, #contents input").eq(0).focus();
+      }
+    });
+    $("#m_menu .back_btn").on("keydown", function (e) {
+      if (e.shiftKey && e.key === "Tab") {
+        e.preventDefault();
+        $("#m_menu .gnb > ul > li")
+          .last()
+          .addClass("active")
+          .siblings()
+          .removeClass("active");
+        $("#m_menu .gnb > ul > li > button").last().focus();
+      }
+    });
+    $("#m_menu a, #m_menu button")
+      .last()
+      .on("keydown", function (e) {
+        if (!e.shiftKey && e.key === "Tab") {
+          e.preventDefault();
+          $("#m_menu .back_btn").focus();
+        }
+      });
+  }, []);
 
   return (
     <>

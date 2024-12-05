@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import $ from "jquery";
 
 interface FloatingProps {
-  className?: string;
+  bottom?: number;
 }
 interface CustomStyle extends CSSStyleDeclaration {
   zoom?: string | number;
 }
 
-const Floating = ({ className }: FloatingProps) => {
+const Floating = ({ bottom }: FloatingProps) => {
   const [floatingShow, setFloatingShow] = useState(true);
   const [zoomsActive, setZoomsActive] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
@@ -72,7 +72,7 @@ const Floating = ({ className }: FloatingProps) => {
   }, []);
 
   return (
-    <div id="floating_menu" className={`${floatingShow ? "show" : ""} ${className ?? ""}`}>
+    <div id="floating_menu" className={`${floatingShow ? "show" : ""} ${bottom ? `b_${bottom}` : ""}`}>
       <div className={`zoom_area ${zoomsActive ? "active" : ""}`}>
         <button type="button" className="zoom_btn" onClick={() => setZoomsActive((state) => !state)}>
           <span className="hidden_text">{zoomsActive ? "화면 확대/축소 선택 닫기" : "화면 확대/축소 선택 열기"}</span>
