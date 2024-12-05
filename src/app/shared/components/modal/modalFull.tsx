@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import Modal from "@/app/shared/components/modal/modal";
-import $ from "jquery";
 
 interface ModalFullProps {
   title: string;
@@ -10,10 +8,6 @@ interface ModalFullProps {
 }
 
 const ModalFull = ({ title, children, open, onClose }: ModalFullProps) => {
-  useEffect(() => {
-    if (open) $('.modal_wrap button, .modal_wrap a').first().focus();
-  }, [open]);
-  
   return (
     <Modal type="full" open={open}>
       <div className="md_tit">

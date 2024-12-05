@@ -9,6 +9,10 @@ interface ModalProps {
 
 const Modal = ({ type, open, children }: ModalProps) => {
   useEffect(() => {
+    if (open) $('.modal_wrap button, .modal_wrap a').first().focus();
+  }, [open]);
+  
+  useEffect(() => {
     // modal event
     $(document).on("click", ".modal_wrap", function (e) {
       const modal = $(e.target).parents(".modal_wrap");
