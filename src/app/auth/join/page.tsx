@@ -8,15 +8,17 @@ import { SelectOption } from "@/app/shared/types/select.type";
 import { SPECIALIZATION } from "@/utils/specialization";
 
 const JoinPage = () => {
-  const [options, setOptions] = useState<SelectOption[]>([{
-    id: "세부 전문분야를 선택해 주세요", 
+  const [specialtyDetailValue, setSpecialtyDetailValue] = useState("");
+  const [specialtyDetailOptions, setSpecialtyDetailOptions] = useState<SelectOption[]>([{
+    id: "", 
     text: "세부 전문분야를 선택해 주세요",
   }]);
 
   const onSpecializationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const valueDetails = SPECIALIZATION.find((item) => value in item)?.[value] || [];
-    setOptions(valueDetails);
+    setSpecialtyDetailValue("");
+    setSpecialtyDetailOptions(valueDetails);
   };
 
   return (
@@ -133,26 +135,15 @@ const JoinPage = () => {
 
                 <div className="label_input_area">
                   <span className="label">성별</span>
-                  <div
-                    className="select_custom"
-                    role="combobox"
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="select_btn01"
-                  >
-                    <button
-                      type="button"
-                      id="select_btn01"
-                      aria-controls="select_option01"
-                      disabled
-                    >
-                      성별
-                    </button>
-                    <ul id="select_option01" role="listbox">
-                      <li role="option" data-value="1" tabIndex={0}>여성</li>
-                      <li role="option" data-value="2" tabIndex={0}>남성</li>
-                    </ul>
-                  </div>
+                  <CustomSelect 
+                    id="gender" 
+                    placeholder="성별" 
+                    options={[
+                      { id: "1", text: "여성" },
+                      { id: "2", text: "남성" },
+                    ]}
+                    disabled
+                  />
                 </div>
                 {/* // 본인인증 정보 */}
 
@@ -195,8 +186,10 @@ const JoinPage = () => {
                   <CustomSelect 
                     type="top" 
                     id="specialty_detail" 
-                    placeholder="세부 전문분야를 선택해 주세요" 
-                    options={options} 
+                    placeholder="세부 전문분야를 선택해 주세요"
+                    options={specialtyDetailOptions} 
+                    value={specialtyDetailValue}
+                    setValue={setSpecialtyDetailValue}
                   />
                 </div>
 
