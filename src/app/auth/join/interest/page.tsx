@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Header from "@/app/shared/components/layout/header";
 import Floating from "@/app/shared/components/layout/floating";

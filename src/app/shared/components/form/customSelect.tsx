@@ -73,7 +73,7 @@ const CustomSelect = ({
   useEffect(() => {
     setValue?.("");
     setSelectedText(placeholder ?? options?.[0]?.text);
-  }, [options]);
+  }, [placeholder, options, setValue]);
 
 
   useEffect(() => {

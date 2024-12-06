@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import SwiperCore from 'swiper';
+import SwiperCore, { Swiper as SwiperClass } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { TabBtn } from '@/app/shared/types/tab.type';
 
@@ -7,8 +7,8 @@ interface Props {
   className?: string;
   spaceBetween?: number;
   tabs: TabBtn[];
-  active: any;
-  setActive: React.Dispatch<React.SetStateAction<any>>;
+  active: string;
+  setActive: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const TabBtnSlider = ({
@@ -27,14 +27,14 @@ const TabBtnSlider = ({
 
       swiperRef.current.update();
     }
-  }, [active]);
+  }, [tabs, active]);
 
   return tabs?.length > 0 ? (
     <Swiper
       className={`tab_area tab_slider ${className ?? ""}`}
       spaceBetween={spaceBetween ?? 0}
       slidesPerView="auto"
-      onSwiper={(swiper: any) => {
+      onSwiper={(swiper: SwiperClass) => {
         swiperRef.current = swiper;
       }}
     >

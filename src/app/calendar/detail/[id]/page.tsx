@@ -1,13 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Header from "@/app/shared/components/layout/header";
 import Floating from "@/app/shared/components/layout/floating";
 
 const CalendarDetailPage = () => {
-  const [tabActive, setTabActive] = useState("0");
-
   return (
     <>
       <div className="sticky_menu">

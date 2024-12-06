@@ -31,7 +31,8 @@ const Calendar = () => {
         // 스크롤 이벤트
         if (event instanceof WheelEvent) {
           event.preventDefault();
-          event.deltaY < 0 ? calendarApi?.prev() : calendarApi?.next();
+          if (event.deltaY < 0) calendarApi?.prev()
+          else calendarApi?.next();
         }
   
         // 키보드 이벤트
@@ -53,7 +54,8 @@ const Calendar = () => {
             const endX = event.changedTouches[0].clientX;
             const diffX = startX - endX;
             if (Math.abs(diffX) > 50) {
-              diffX > 0 ? calendarApi?.next() : calendarApi?.prev();
+              if (diffX > 0) calendarApi?.next()
+              else calendarApi?.prev();
             }
           }
         }
