@@ -210,7 +210,6 @@ const JoinPage = () => {
             </form>
           </div>
         </div>
-
       </div>
     </>
   );
