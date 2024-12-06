@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import "@/assets/scss/style.scss";
 
 export const metadata: Metadata = {

@@ -844,22 +844,20 @@
     width: auto;
   }
   &.tab_style01 {
-    ul {
-      li {
-        button {
-          @include flexLayout(center, center);
-          @include fontStyle(1.4rem, $color_gray_5, 500);
-          height: 33px;
-          padding: 0 10px;
-          border: 1px solid $color_gray_d8;
-          border-radius: 4px;
-          background-color: $color_white;
-        }
-        &.on button {
-          border-color: $color_gray_1d;
-          background-color: $color_gray_1d;
-          color: $color_white;
-        }
+    ul li, .swiper {
+      button {
+        @include flexLayout(center, center);
+        @include fontStyle(1.4rem, $color_gray_5, 500);
+        height: 33px;
+        padding: 0 10px;
+        border: 1px solid $color_gray_d8;
+        border-radius: 4px;
+        background-color: $color_white;
+      }
+      &.on button {
+        border-color: $color_gray_1d;
+        background-color: $color_gray_1d;
+        color: $color_white;
       }
     }
     &:not(.tab_slider, .tab_slider02) ul {
@@ -879,20 +877,20 @@
       height: 1px;
       background-color: $color_gray_e;
     }
-    ul {
+    ul, .swiper-wrapper {
       @include flexLayout(stretch, flex-start);
-      li {
-        button {
-          @include flexLayout(center, center);
-          @include fontStyle(1.6rem, $color_gray_71, 500);
-          height: 52px;
-          padding: 0 8px;
-          border-bottom: 2px solid transparent;
-        }
-        &.on button {
-          border-color: $color_black;
-          color: $color_gray_1d;
-        }
+    }
+    ul li, .swiper-slide {
+      button {
+        @include flexLayout(center, center);
+        @include fontStyle(1.6rem, $color_gray_71, 500);
+        height: 52px;
+        padding: 0 8px;
+        border-bottom: 2px solid transparent;
+      }
+      &.on button {
+        border-color: $color_black;
+        color: $color_gray_1d;
       }
     }
   }
