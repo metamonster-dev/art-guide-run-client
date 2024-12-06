@@ -3,7 +3,7 @@ import SwiperCore, { Swiper as SwiperClass } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { TabBtn } from '@/app/shared/types/tab.type';
 
-interface Props {
+interface TabBtnProps {
   className?: string;
   spaceBetween?: number;
   tabs: TabBtn[];
@@ -17,7 +17,7 @@ const TabBtnSlider = ({
   tabs,
   active,
   setActive,
-}: Props) => {
+}: TabBtnProps) => {
   const swiperRef = useRef<SwiperCore | null>(null);
 
   useEffect(() => {
