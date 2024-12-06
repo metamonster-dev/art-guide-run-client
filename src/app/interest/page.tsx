@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Header from "@/app/shared/components/layout/header";
 import Floating from "@/app/shared/components/layout/floating";
 import BottomNav from "@/app/shared/components/layout/bottomNav";
-import Link from "next/link";
 
 const InterestPage = () => {
   const [checked, setChecked] = useState<number[]>([]);

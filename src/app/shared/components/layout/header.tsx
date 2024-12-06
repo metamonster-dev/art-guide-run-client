@@ -146,7 +146,7 @@ const Header = ({
             <li className="active">
               <button type="button">회사소개</button>
               <ul className="depth02">
-                <li><Link href="/company/company">회사소개</Link></li>
+                <li><Link href="/company">회사소개</Link></li>
               </ul>
             </li>
             <li>
