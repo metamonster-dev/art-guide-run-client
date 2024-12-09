@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import PageWrap from "@/app/shared/components/layout/pageWrap";
 import Header from "@/app/shared/components/layout/header";
 import Floating from "@/app/shared/components/layout/floating";
 import BottomNav from "@/app/shared/components/layout/bottomNav";
@@ -20,195 +21,195 @@ const DeepFinderListPage = () => {
   };
 
   return (
-    <>
-      <div className="sticky_menu">
-        <Header title="딥파인더" isBack />
-        <TabBtnSlider
-          className="tab_style02"
-          tabs={[
-            { id: "0", text: "전체" },
-            { id: "1", text: "예술인 등록" },
-            { id: "2", text: "작품 저작권 등록" },
-            { id: "3", text: "협회가입, 작품등록" },
-            { id: "4", text: "기획운영 대행" },
-            { id: "5", text: "디지털 퍼블리싱" },
-          ]}
-          active={tabActive}
-          setActive={setTabActive}
-        />
-      </div>
-      
-      <div id="contents" tabIndex={-1}>
-        <Floating bottom={80} />
-        <BottomNav />
+    <PageWrap
+      sticky={
+        <>
+          <Header title="딥파인더" isBack />
+          <TabBtnSlider
+            className="tab_style02"
+            tabs={[
+              { id: "0", text: "전체" },
+              { id: "1", text: "예술인 등록" },
+              { id: "2", text: "작품 저작권 등록" },
+              { id: "3", text: "협회가입, 작품등록" },
+              { id: "4", text: "기획운영 대행" },
+              { id: "5", text: "디지털 퍼블리싱" },
+            ]}
+            active={tabActive}
+            setActive={setTabActive}
+          />
+        </>
+      }
+    >
+      <Floating bottom={80} />
+      <BottomNav />
 
-        <div className="pt_24 pb_150 border_top_8">
-          <div className="inner">
-            <div className="list_tit_area">
-              <p>총 <b>63</b>건</p>
-              <button
-                type="button"
-                className="select_btn"
-                id="sort_btn"
-                ref={sortBtnRef}
-                onClick={() => setSortOpen(true)}
-              >
-                인기순
-              </button>
-            </div>
+      <div className="pt_24 pb_150 border_top_8">
+        <div className="inner">
+          <div className="list_tit_area">
+            <p>총 <b>63</b>건</p>
+            <button
+              type="button"
+              className="select_btn"
+              id="sort_btn"
+              ref={sortBtnRef}
+              onClick={() => setSortOpen(true)}
+            >
+              인기순
+            </button>
+          </div>
 
-            {/* 데이터 없을 시, */}
-            {/* <div className="no_data_area pt_40">
-              <i aria-hidden="true"></i>
-              <span>상품이 없습니다.</span>
-            </div> */}
-            <div className="list_area list_style01 border_top mt_16 pt_24">
-              <ul>
-                <li>
-                  <button type="button" className="heart_btn on">
-                    <i aria-hidden="true"></i><span>관심 취소</span>
-                  </button>
-                  <Link href={`/product/detail/${1}`}>
-                    <div className="img_area rect01">
-                      <Image
-                        src="/images/product/product_img02.jpg"
-                        alt="한국 예술인 복지 재단 이미지"
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
+          {/* 데이터 없을 시, */}
+          {/* <div className="no_data_area pt_40">
+            <i aria-hidden="true"></i>
+            <span>상품이 없습니다.</span>
+          </div> */}
+          <div className="list_area list_style01 border_top mt_16 pt_24">
+            <ul>
+              <li>
+                <button type="button" className="heart_btn on">
+                  <i aria-hidden="true"></i><span>관심 취소</span>
+                </button>
+                <Link href={`/product/detail/${1}`}>
+                  <div className="img_area rect01">
+                    <Image
+                      src="/images/product/product_img02.jpg"
+                      alt="한국 예술인 복지 재단 이미지"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="text_area">
+                    <span className="cate">예술인 등록 서비스</span>
+                    <p className="tit">한국 예술인 복지 재단</p>
+                    <div className="price_text">
+                      <span className="percent">10%</span>
+                      <span className="price">40,500원</span>
                     </div>
-                    <div className="text_area">
-                      <span className="cate">예술인 등록 서비스</span>
-                      <p className="tit">한국 예술인 복지 재단</p>
-                      <div className="price_text">
-                        <span className="percent">10%</span>
-                        <span className="price">40,500원</span>
-                      </div>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <button type="button" className="heart_btn">
+                  <i aria-hidden="true"></i><span>관심 등록</span>
+                </button>
+                <Link href={`/product/detail/${1}`}>
+                  <div className="img_area rect01">
+                    <Image
+                      src="/images/product/product_img02.jpg"
+                      alt="관련 저작권 협회, 한국 저작권 위원회 이미지"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="text_area">
+                    <span className="cate">작품 저작권 등록</span>
+                    <p className="tit">관련 저작권 협회, 한국 저작권 위원회</p>
+                    <div className="price_text">
+                      <span className="price">40,500원</span>
                     </div>
-                  </Link>
-                </li>
-                <li>
-                  <button type="button" className="heart_btn">
-                    <i aria-hidden="true"></i><span>관심 등록</span>
-                  </button>
-                  <Link href={`/product/detail/${1}`}>
-                    <div className="img_area rect01">
-                      <Image
-                        src="/images/product/product_img02.jpg"
-                        alt="관련 저작권 협회, 한국 저작권 위원회 이미지"
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <button type="button" className="heart_btn">
+                  <i aria-hidden="true"></i><span>관심 등록</span>
+                </button>
+                <Link href={`/product/detail/${1}`}>
+                  <div className="img_area rect01">
+                    <Image
+                      src="/images/product/product_img01.jpg"
+                      alt="관련 저작권 협회, 한국 저작권 위원회 이미지"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="text_area">
+                    <span className="cate">작품 저작권 등록</span>
+                    <p className="tit">관련 저작권 협회, 한국 저작권 위원회</p>
+                    <div className="price_text">
+                      <span className="price">40,500원</span>
                     </div>
-                    <div className="text_area">
-                      <span className="cate">작품 저작권 등록</span>
-                      <p className="tit">관련 저작권 협회, 한국 저작권 위원회</p>
-                      <div className="price_text">
-                        <span className="price">40,500원</span>
-                      </div>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <button type="button" className="heart_btn">
+                  <i aria-hidden="true"></i><span>관심 등록</span>
+                </button>
+                <Link href={`/product/detail/${1}`}>
+                  <div className="img_area rect01">
+                    <Image
+                      src="/images/product/product_img01.jpg"
+                      alt="아트가이드런이 추천하는 실무활용 가이드 이미지"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="text_area">
+                    <span className="cate">디지털 퍼블리싱</span>
+                    <p className="tit">
+                      아트가이드런이 추천하는 실무활용 가이드
+                    </p>
+                    <div className="price_text">
+                      <span className="price">40,500원</span>
                     </div>
-                  </Link>
-                </li>
-                <li>
-                  <button type="button" className="heart_btn">
-                    <i aria-hidden="true"></i><span>관심 등록</span>
-                  </button>
-                  <Link href={`/product/detail/${1}`}>
-                    <div className="img_area rect01">
-                      <Image
-                        src="/images/product/product_img01.jpg"
-                        alt="관련 저작권 협회, 한국 저작권 위원회 이미지"
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <button type="button" className="heart_btn">
+                  <i aria-hidden="true"></i><span>관심 등록</span>
+                </button>
+                <Link href={`/product/detail/${1}`}>
+                  <div className="img_area rect01">
+                    <Image
+                      src="/images/product/product_img02.jpg"
+                      alt="예술기획분야 취창업 전문 컨설팅 이미지"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="text_area">
+                    <span className="cate">디지털 퍼블리싱</span>
+                    <p className="tit">예술기획분야 취창업 전문 컨설팅</p>
+                    <div className="price_text">
+                      <span className="percent">10%</span>
+                      <span className="price">40,500원</span>
                     </div>
-                    <div className="text_area">
-                      <span className="cate">작품 저작권 등록</span>
-                      <p className="tit">관련 저작권 협회, 한국 저작권 위원회</p>
-                      <div className="price_text">
-                        <span className="price">40,500원</span>
-                      </div>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <button type="button" className="heart_btn">
+                  <i aria-hidden="true"></i><span>관심 등록</span>
+                </button>
+                <Link href={`/product/detail/${1}`}>
+                  <div className="img_area rect01">
+                    <Image
+                      src="/images/product/product_img02.jpg"
+                      alt="한국 예술인 복지 재단 등록 서비스 이미지"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="text_area">
+                    <span className="cate">예술인 등록</span>
+                    <p className="tit">한국 예술인 복지 재단 등록 서비스</p>
+                    <div className="price_text">
+                      <span className="price">40,500원</span>
                     </div>
-                  </Link>
-                </li>
-                <li>
-                  <button type="button" className="heart_btn">
-                    <i aria-hidden="true"></i><span>관심 등록</span>
-                  </button>
-                  <Link href={`/product/detail/${1}`}>
-                    <div className="img_area rect01">
-                      <Image
-                        src="/images/product/product_img01.jpg"
-                        alt="아트가이드런이 추천하는 실무활용 가이드 이미지"
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                    </div>
-                    <div className="text_area">
-                      <span className="cate">디지털 퍼블리싱</span>
-                      <p className="tit">
-                        아트가이드런이 추천하는 실무활용 가이드
-                      </p>
-                      <div className="price_text">
-                        <span className="price">40,500원</span>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <button type="button" className="heart_btn">
-                    <i aria-hidden="true"></i><span>관심 등록</span>
-                  </button>
-                  <Link href={`/product/detail/${1}`}>
-                    <div className="img_area rect01">
-                      <Image
-                        src="/images/product/product_img02.jpg"
-                        alt="예술기획분야 취창업 전문 컨설팅 이미지"
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                    </div>
-                    <div className="text_area">
-                      <span className="cate">디지털 퍼블리싱</span>
-                      <p className="tit">예술기획분야 취창업 전문 컨설팅</p>
-                      <div className="price_text">
-                        <span className="percent">10%</span>
-                        <span className="price">40,500원</span>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <button type="button" className="heart_btn">
-                    <i aria-hidden="true"></i><span>관심 등록</span>
-                  </button>
-                  <Link href={`/product/detail/${1}`}>
-                    <div className="img_area rect01">
-                      <Image
-                        src="/images/product/product_img02.jpg"
-                        alt="한국 예술인 복지 재단 등록 서비스 이미지"
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                    </div>
-                    <div className="text_area">
-                      <span className="cate">예술인 등록</span>
-                      <p className="tit">한국 예술인 복지 재단 등록 서비스</p>
-                      <div className="price_text">
-                        <span className="price">40,500원</span>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+                  </div>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
       
       {/* MODAL */}
       <SortModal open={sortOpen} onClose={onSortClose} />
-    </>
+    </PageWrap>
   );
 };
 

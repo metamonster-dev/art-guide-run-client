@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import PageWrap from "@/app/shared/components/layout/pageWrap";
 import Header from "@/app/shared/components/layout/header";
 import Floating from "@/app/shared/components/layout/floating";
 import Modal from "@/app/shared/components/modal/modal";
@@ -32,34 +33,30 @@ const FindPwEmailPage = () => {
   }
 
   return (
-    <>
-      <div className="sticky_menu">
-        <Header title="비밀번호 찾기" isBack />
-      </div>
-      
-      <div id="contents" tabIndex={-1}>
-        <Floating />
+    <PageWrap
+      sticky={<Header title="비밀번호 찾기" isBack />}
+    >
+      <Floating />
 
-        <div className="inner">
-          <div className="find_info_area">
-            <Image
-              src="/images/icon_email.svg"
-              alt="비밀번호 찾기 이메일 아이콘"
-              aria-hidden="true"
-              width={64}
-              height={64}
-            />
-            <p>
-              가입 시 입력한 이메일 아이디로 <br />
-              인증번호를 보내드립니다.
-            </p>
-          </div>
-          <div className="pb_80">
-            <EmailForm onFormSubmit={onEmailSubmit} />
-            {verifyFormShow && (
-              <VerifyForm onFormSubmit={onVerifySubmit} inputRef={verifyInputRef} />
-            )}
-          </div>
+      <div className="inner">
+        <div className="find_info_area">
+          <Image
+            src="/images/icon_email.svg"
+            alt="비밀번호 찾기 이메일 아이콘"
+            aria-hidden="true"
+            width={64}
+            height={64}
+          />
+          <p>
+            가입 시 입력한 이메일 아이디로 <br />
+            인증번호를 보내드립니다.
+          </p>
+        </div>
+        <div className="pb_80">
+          <EmailForm onFormSubmit={onEmailSubmit} />
+          {verifyFormShow && (
+            <VerifyForm onFormSubmit={onVerifySubmit} inputRef={verifyInputRef} />
+          )}
         </div>
       </div>
 
@@ -77,7 +74,7 @@ const FindPwEmailPage = () => {
           </button>
         </div>
       </Modal>
-    </>
+    </PageWrap>
   );
 };
 
