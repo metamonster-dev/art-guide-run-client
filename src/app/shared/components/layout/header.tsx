@@ -152,7 +152,7 @@ const Header = ({
             <li>
               <button type="button">가이드런</button>
               <ul className="depth02">
-                <li><Link href="/product/list_guide_run">1:1 컨설팅</Link></li>
+                <li><Link href="/product/list/guide-run">1:1 컨설팅</Link></li>
                 <li><Link href="javascript:;">클래스</Link></li>
                 <li><Link href="javascript:;">포트폴리오 멘토링</Link></li>
                 <li><Link href="javascript:;">공모사업 지원가이드</Link></li>
@@ -161,7 +161,7 @@ const Header = ({
             <li>
               <button type="button">딥파인더</button>
               <ul className="depth02">
-                <li><Link href="/product/list_deep_finder">예술인 등록</Link></li>
+                <li><Link href="/product/list/deep-finder">예술인 등록</Link></li>
                 <li><Link href="javascript:;">작품 저작권 등록</Link></li>
                 <li><Link href="javascript:;">협회가입, 작품등록</Link></li>
                 <li><Link href="javascript:;">기획운영 대행</Link></li>
@@ -171,7 +171,7 @@ const Header = ({
             <li>
               <button type="button">아트마켓</button>
               <ul className="depth02">
-                <li><Link href="/product/list_art_market">공연</Link></li>
+                <li><Link href="/product/list/art-market">공연</Link></li>
                 <li><Link href="javascript:;">작품</Link></li>
                 <li><Link href="javascript:;">판매</Link></li>
               </ul>

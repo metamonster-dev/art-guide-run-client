@@ -1,3 +1,5 @@
+// import Image from "next/image";
+
 const MultiImageUpload = () => {
   return (
     <>
@@ -12,9 +14,11 @@ const MultiImageUpload = () => {
           <label htmlFor="img"><span>이미지 첨부</span></label>
         </div>
         {/* <div className="img_input">
-          <img
+          <Image
             src="/images/product/product_img05.jpg"
             alt="이미지 등록"
+            fill
+            style={{ objectFit: "cover" }}
           />
           <button type="button" className="img_x_btn">
             <span>등록한 이미지 삭제</span>

@@ -87,8 +87,8 @@ const InterestPage = () => {
                           <Image
                             src="/images/product/product_img02.jpg"
                             alt="예술기획분야 취창업 전문 컨설팅 이미지"
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: "cover" }}
                           />
                         </span>
                       </label>
@@ -119,8 +119,8 @@ const InterestPage = () => {
                           <Image
                             src="/images/product/product_img02.jpg"
                             alt="아트마켓 공예 클래스 이미지"
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: "cover" }}
                           />
                         </span>
                       </label>
@@ -150,8 +150,8 @@ const InterestPage = () => {
                           <Image
                             src="/images/product/product_img01.jpg"
                             alt="아트가이드런이 추천하는 실무활용 가이드 이미지"
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: "cover" }}
                           />
                         </span>
                       </label>
@@ -183,8 +183,8 @@ const InterestPage = () => {
                           <Image
                             src="/images/product/product_img01.jpg"
                             alt="아트가이드런이 추천하는 실무활용 가이드 이미지"
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: "cover" }}
                           />
                         </span>
                       </label>

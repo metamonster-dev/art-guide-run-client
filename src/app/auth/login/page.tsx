@@ -121,6 +121,7 @@ const FindIdPage = () => {
         </div>
       </div>
 
+      {/* MODAL */}
       <IsJoinModal open={isJoinOpen} onClose={() => setIsJoinOpen(false)} />
     </>
   );

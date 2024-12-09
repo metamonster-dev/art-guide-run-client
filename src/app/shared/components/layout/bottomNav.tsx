@@ -17,19 +17,19 @@ const BottomNav = ({ active }: BottomNavProps) => {
           </Link>
         </li>
         <li className={active === "calendar" ? "active" : ""}>
-          <Link href="/calendar/calendar">
+          <Link href="/calendar">
             <i className="icon02" aria-hidden="true"></i>
             <span>캘린더</span>
           </Link>
         </li>
         <li className={active === "interest" ? "active" : ""}>
-          <Link href="/interest/interest">
+          <Link href="/interest">
             <i className="icon03" aria-hidden="true"></i>
             <span>관심</span>
           </Link>
         </li>
         <li className={active === "mypage" ? "active" : ""}>
-          <Link href="/mypage/mypage">
+          <Link href="/mypage">
             <i className="icon04" aria-hidden="true"></i>
             <span>마이</span>
           </Link>

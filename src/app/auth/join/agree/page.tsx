@@ -98,6 +98,7 @@ const JoinAgreePage = () => {
                       <button
                         type="button"
                         id="terms_btn"
+                        ref={termsBtnRef}
                         onClick={() => setTermsOpen(true)}
                       >
                         보기
@@ -120,6 +121,7 @@ const JoinAgreePage = () => {
                       <button
                         type="button"
                         id="privacy_btn"
+                        ref={privacyBtnRef}
                         onClick={() => setPrivacyOpen(true)}
                       >
                         보기
@@ -142,6 +144,7 @@ const JoinAgreePage = () => {
                       <button
                         type="button"
                         id="marketing_btn"
+                        ref={marketingBtnRef}
                         onClick={() => setMarketingOpen(true)}
                       >
                         보기
@@ -178,6 +181,7 @@ const JoinAgreePage = () => {
         </section>
       </div>
 
+      {/* MODAL */}
       <TermsModal open={termsOpen} onClose={onTermsClose} />
       <PrivacyModal open={privacyOpen} onClose={onPrivacyClose} />
       <MarketingModal open={marketingOpen} onClose={onMarketingClose} />
