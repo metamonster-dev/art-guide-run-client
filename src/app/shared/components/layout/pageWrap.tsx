@@ -1,16 +1,15 @@
 interface PageWrapProps {
+  className?: string;
   sticky?: JSX.Element | JSX.Element[];
   children: React.ReactNode;
 }
 
-const PageWrap = ({ sticky, children }: PageWrapProps) => {
+const PageWrap = ({ className, sticky, children }: PageWrapProps) => {
   return (
     <>
-      <div className="sticky_menu">
-        {sticky}
-      </div>
-      
-      <div id="contents" tabIndex={-1}>
+      <div className="sticky_menu">{sticky}</div>
+
+      <div id="contents" className={className ?? ""} tabIndex={-1}>
         {children}
       </div>
     </>

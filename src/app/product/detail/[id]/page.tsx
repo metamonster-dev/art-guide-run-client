@@ -67,10 +67,13 @@ const ProductDetailPage = () => {
         </Link>
       </div>
 
+      {/* 상품 이미지 */}
       <ProductImageSlider />
 
+      {/* 카테고리, 공유, 이름, 가격 */}
       <ProductTopInfo onReviewClick={() => handleTabClick(1)} />
 
+      {/* 탭 버튼 */}
       <div className="prod_detail_tab_area tab_area tab_style03">
         <ul>
           <li className={tabActive === 0 ? "on" : ""}>
@@ -86,6 +89,7 @@ const ProductDetailPage = () => {
         </ul>
       </div>
 
+      {/* 상품정보 */}
       <section
         className="section"
         ref={(el) => {
@@ -95,6 +99,7 @@ const ProductDetailPage = () => {
         <ProductItemInfo />
       </section>
 
+      {/* 후기 */}
       <section
         className="section"
         ref={(el) => {
