@@ -1,6 +1,7 @@
 import Header from "@/app/shared/components/layout/header";
 import Floating from "@/app/shared/components/layout/floating";
 import BottomNav from "@/app/shared/components/layout/bottomNav";
+import MultiImageUpload from '@/app/shared/components/form/multiImageUpload';
 
 const ContactPage = () => {
   return (
@@ -42,20 +43,7 @@ const ContactPage = () => {
 
                 <div className="label_input_area">
                   <span className="label">이미지 첨부</span>
-                  <div className="img_input_list_area">
-                    <div className="img_input">
-                      <input
-                        type="file"
-                        name="img"
-                        id="img"
-                        accept=".jpg, .jpeg, .png"
-                      />
-                      <label htmlFor="img"><span>이미지 첨부</span></label>
-                    </div>
-                  </div>
-                  <span className="input_desc_text02">
-                    * 10MB 이하 JPG, PNG만 등록 가능합니다. (최대3장)
-                  </span>
+                  <MultiImageUpload />
                 </div>
               </div>
 
