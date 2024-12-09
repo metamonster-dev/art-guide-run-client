@@ -3,7 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import ProductShareModal from "@/app/product/detail/[id]/_components/shareModal";
 
-const ProductTopInfo = () => {
+interface ProductTopInfoProps {
+  onReviewClick?: () => void;
+}
+
+const ProductTopInfo = ({ onReviewClick }: ProductTopInfoProps) => {
   const shareBtnRef = useRef<HTMLButtonElement>(null);
   const [shareOpen, setShareOpen] = useState(false);
 
@@ -45,7 +49,9 @@ const ProductTopInfo = () => {
                 <span className="hidden_text">5점 만점에 4점</span>
                 <div className="star_on" aria-hidden="true" style={{ width: "80%" }}></div>
               </div>
-              <button type="button">후기 23건</button>
+              <button type="button" onClick={onReviewClick}>
+                후기 23건
+              </button>
             </div>
             <div className="price_text">
               <span className="percent">10%</span>
